@@ -25,7 +25,7 @@ class DataIngestion():
             df=pd.read_csv('notebook/data/raw_data.csv')
             logger.info('Data Read Successfully')
 
-            os.makedirs(os.path.join(self.ingestion_config.train_data_path),exist_ok=True)
+            os.makedirs("artifact/",exist_ok=True)
 
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
 
@@ -35,7 +35,7 @@ class DataIngestion():
 
             train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
 
-            test_Set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
+            test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
             logger.info("Successfully Ingested")
 
